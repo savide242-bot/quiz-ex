@@ -148,141 +148,123 @@ body.chat-active {
   color: #f1f5f9;
 }
 
-/* Card do Vídeo (VSL Vertical 9:16) */
-.video-wrapper-card {
+/* Card de Retrato de Autoridade do Especialista */
+.doctor-portrait-card {
   width: 100%;
-  max-width: 400px;
-  margin: 0 auto 24px;
+  max-width: 380px;
+  margin: 0 auto 22px;
   position: relative;
-  border-radius: 18px;
-  padding: 5px;
-  background: linear-gradient(145deg, rgba(255,255,255,0.12) 0%, rgba(0,168,132,0.3) 50%, rgba(255,255,255,0.05) 100%);
+  border-radius: 20px;
+  padding: 4px;
+  background: linear-gradient(145deg, rgba(255,255,255,0.18) 0%, rgba(0,168,132,0.6) 50%, rgba(255,255,255,0.08) 100%);
   box-shadow: 
-    0 20px 45px rgba(0, 0, 0, 0.6),
-    0 0 35px rgba(0, 200, 83, 0.15);
+    0 18px 45px rgba(0, 0, 0, 0.7),
+    0 0 30px rgba(0, 168, 132, 0.25);
 }
 
-.video-container {
-  width: 100%;
-  aspect-ratio: 9/16;
-  min-height: 460px;
+.doctor-portrait-inner {
   position: relative;
-  border-radius: 14px;
+  border-radius: 16px;
   overflow: hidden;
   background-color: #0d1418;
 }
 
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
+.doctor-portrait-img {
   width: 100%;
-  height: 100%;
-  border: 0;
-  border-radius: 14px;
-  z-index: 1;
-}
-
-/* Capa / Poster com Carregamento Instantâneo */
-.video-poster {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 10;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #0b141a;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.video-poster.hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-.video-poster-img {
-  width: 100%;
-  height: 100%;
+  height: auto;
+  display: block;
   object-fit: cover;
+  border-radius: 16px;
+}
+
+.doctor-badge-overlay {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
-  filter: brightness(0.92);
-  transition: transform 0.4s ease, filter 0.4s ease;
+  right: 0;
+  background: linear-gradient(0deg, rgba(11,20,26,0.95) 0%, rgba(11,20,26,0.85) 60%, transparent 100%);
+  padding: 26px 16px 14px;
+  text-align: center;
 }
 
-.video-poster:hover .video-poster-img {
-  filter: brightness(1);
-  transform: scale(1.02);
-}
-
-/* Overlay Escuro com Botão de Play Pulsante */
-.play-button-overlay {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
-  padding: 20px;
-}
-
-.play-button-circle {
-  width: 78px;
-  height: 78px;
-  background: linear-gradient(135deg, #00c853 0%, #00a884 100%);
-  border-radius: 50%;
+.doctor-badge-name {
+  color: #ffffff;
+  font-size: 16.5px;
+  font-weight: 800;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 0 0 rgba(0, 200, 83, 0.7), 0 10px 25px rgba(0, 0, 0, 0.5);
-  animation: pulsePlay 1.8s infinite;
-  transition: transform 0.2s ease;
+  gap: 6px;
 }
 
-.video-poster:hover .play-button-circle {
-  transform: scale(1.08);
-}
-
-.play-button-circle svg {
-  margin-left: 5px;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
-}
-
-.play-badge-label {
-  background: rgba(11, 20, 26, 0.88);
-  backdrop-filter: blur(8px);
-  color: #ffffff;
+.doctor-badge-title {
+  color: #34d399;
   font-size: 13px;
+  font-weight: 600;
+  margin-top: 3px;
+}
+
+/* Card de Introdução e Boas-Vindas Humanizado */
+.doctor-intro-card {
+  width: 100%;
+  max-width: 520px;
+  background-color: #111b21;
+  border: 1px solid rgba(0, 168, 132, 0.4);
+  border-radius: 16px;
+  padding: 22px 22px;
+  text-align: left;
+  margin-bottom: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+.doctor-intro-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.5px;
-  padding: 8px 18px;
-  border-radius: 20px;
-  border: 1px solid rgba(0, 200, 83, 0.5);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  color: #25d366;
   text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 14px;
 }
 
-@keyframes pulsePlay {
-  0% {
-    box-shadow: 0 0 0 0 rgba(0, 200, 83, 0.7), 0 10px 25px rgba(0,0,0,0.5);
-  }
-  70% {
-    box-shadow: 0 0 0 20px rgba(0, 200, 83, 0), 0 10px 25px rgba(0,0,0,0.5);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(0, 200, 83, 0), 0 10px 25px rgba(0,0,0,0.5);
-  }
+.doctor-status-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: #25d366;
+  animation: pulseDot 1.5s infinite;
 }
 
-/* Link de Fallback para YouTube */
-.video-troubleshoot-link {
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.doctor-intro-text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #e9edef;
+  margin-bottom: 14px;
+}
+
+.doctor-intro-text strong {
+  color: #ffffff;
+}
+
+.doctor-intro-call {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: #8696a0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 14px;
+  margin-top: 10px;
+}
+
+.doctor-intro-call strong {
+  color: #25d366;
+}
   display: inline-block;
   margin-top: -10px;
   margin-bottom: 16px;
