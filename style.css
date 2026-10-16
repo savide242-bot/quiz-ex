@@ -455,6 +455,507 @@ html, body {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* Botões Clicáveis do Cabeçalho */
+.header-icon-btn {
+  background: transparent;
+  border: none;
+  color: #54656f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.header-icon-btn:hover {
+  background-color: rgba(11,20,26,0.06);
+  color: #111b21;
+}
+
+.header-icon-btn:active {
+  background-color: rgba(11,20,26,0.12);
+}
+
+.wa-header-left {
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 2px 4px;
+  transition: background-color 0.15s ease;
+}
+
+.wa-header-left:hover {
+  background-color: rgba(11,20,26,0.04);
+}
+
+/* Menu Dropdown dos 3 Pontinhos */
+.wa-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 56px;
+  right: 12px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(11,20,26,0.18);
+  padding: 6px 0;
+  min-width: 210px;
+  z-index: 100;
+  animation: fadeInDown 0.18s ease-out;
+}
+
+.wa-dropdown-menu.active {
+  display: block;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  font-size: 14px;
+  color: #111b21;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.dropdown-item svg {
+  color: #54656f;
+}
+
+.dropdown-item:hover {
+  background-color: #f5f6f6;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========================================================= */
+/* GAVETA DE PERFIL DO DR. CARLOS                            */
+/* ========================================================= */
+.profile-drawer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f0f2f5;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.28s cubic-bezier(0.1, 0.9, 0.2, 1);
+  overflow-y: auto;
+}
+
+.profile-drawer.active {
+  transform: translateX(0);
+}
+
+.profile-header {
+  height: 60px;
+  background-color: #008069;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 16px;
+  font-size: 17px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.profile-back-btn {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+}
+
+.profile-content {
+  padding: 16px 14px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.profile-picture-section {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 24px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 1px 2px rgba(11,20,26,0.06);
+}
+
+.profile-pic-large {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+  margin-bottom: 14px;
+  cursor: pointer;
+}
+
+.profile-pic-large img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111b21;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+}
+
+.profile-account-type {
+  font-size: 13px;
+  color: #00a884;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+.profile-actions-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.profile-action-btn {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 12px 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: #008069;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(11,20,26,0.06);
+  transition: background-color 0.15s ease;
+}
+
+.profile-action-btn:hover {
+  background-color: #f7f8f9;
+}
+
+.profile-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 14px 16px;
+  box-shadow: 0 1px 2px rgba(11,20,26,0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.profile-card-label {
+  font-size: 12px;
+  color: #667781;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.profile-card-text {
+  font-size: 14px;
+  color: #111b21;
+  line-height: 1.4;
+}
+
+.profile-card-sub {
+  font-size: 12px;
+  color: #00a884;
+}
+
+.profile-email-link {
+  font-size: 14.5px;
+  color: #008069;
+  text-decoration: none;
+  font-weight: 600;
+  word-break: break-all;
+}
+
+.profile-email-link:hover {
+  text-decoration: underline;
+}
+
+/* ========================================================= */
+/* TELA DE CHAMADA WHATSAPP REALISTA                         */
+/* ========================================================= */
+.wa-call-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #1f2c34 0%, #0b141a 100%);
+  z-index: 300;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 20px 45px;
+  color: #ffffff;
+  animation: fadeIn 0.25s ease-out;
+}
+
+.wa-call-screen.active {
+  display: flex;
+}
+
+.call-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.call-encryption-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: #8696a0;
+  background-color: rgba(255,255,255,0.06);
+  padding: 3px 10px;
+  border-radius: 12px;
+}
+
+.call-contact-name {
+  font-size: 22px;
+  font-weight: 600;
+  color: #e9edef;
+  margin-top: 4px;
+}
+
+.call-status {
+  font-size: 14.5px;
+  color: #00a884;
+  font-weight: 500;
+}
+
+.call-avatar-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto 0;
+}
+
+.call-avatar-pulse {
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  background-color: rgba(0, 168, 132, 0.25);
+  animation: callPulse 1.8s infinite ease-out;
+}
+
+@keyframes callPulse {
+  0% { transform: scale(0.9); opacity: 0.8; }
+  100% { transform: scale(1.45); opacity: 0; }
+}
+
+.call-avatar-img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255,255,255,0.2);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  position: relative;
+  z-index: 2;
+}
+
+.call-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  margin-bottom: 10px;
+}
+
+.call-btn-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.call-btn-circle:active {
+  transform: scale(0.92);
+}
+
+.call-btn-mute, .call-btn-speaker {
+  background-color: rgba(255,255,255,0.14);
+  color: #ffffff;
+}
+
+.call-btn-end {
+  width: 64px;
+  height: 64px;
+  background-color: #ea0038;
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(234, 0, 56, 0.4);
+}
+
+.call-btn-end:hover {
+  filter: brightness(1.1);
+}
+
+/* ========================================================= */
+/* MODAL DE AUSÊNCIA - VIETNÃ                                 */
+/* ========================================================= */
+.vietnam-notice-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(11,20,26,0.75);
+  z-index: 400;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.2s ease-out;
+}
+
+.vietnam-notice-modal.active {
+  display: flex;
+}
+
+.vietnam-notice-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  max-width: 380px;
+  width: 100%;
+  padding: 24px 20px 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  animation: scaleIn 0.22s cubic-bezier(0.1, 0.9, 0.2, 1);
+}
+
+.vietnam-icon-wrapper {
+  width: 65px;
+  height: 65px;
+  background-color: #e7f7f4;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px;
+}
+
+.vietnam-notice-card h3 {
+  font-size: 18px;
+  color: #111b21;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.vietnam-notice-text {
+  font-size: 14.5px;
+  color: #54656f;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.vietnam-email-box {
+  background-color: #f0f2f5;
+  border-radius: 10px;
+  padding: 12px 10px;
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.vietnam-email-box span {
+  font-size: 12px;
+  color: #667781;
+}
+
+.vietnam-email-link {
+  font-size: 15px;
+  color: #008069;
+  font-weight: 700;
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.vietnam-email-link:hover {
+  text-decoration: underline;
+}
+
+.vietnam-modal-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.btn-send-email-cta {
+  background-color: #00a884;
+  color: #ffffff;
+  font-size: 14.5px;
+  font-weight: 700;
+  padding: 12px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,168,132,0.3);
+  transition: background-color 0.15s ease;
+}
+
+.btn-send-email-cta:hover {
+  background-color: #008069;
+}
+
+.btn-close-notice {
+  background: transparent;
+  border: none;
+  color: #54656f;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.btn-close-notice:hover {
+  background-color: #f5f6f6;
+  color: #111b21;
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
 /* Responsividade */
 @media (max-width: 520px) {
   .app-container {
@@ -463,3 +964,4 @@ html, body {
     box-shadow: none;
   }
 }
+
