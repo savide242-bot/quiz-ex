@@ -53,7 +53,7 @@ Abaixo está o fluxo extraído diretamente da árvore de conversa:
 * **Opção:** `👉 COMEÇAR TESTE GRÁTIS`
 
 ### 2. Apresentação da Autoridade
-* **Mensagem:** "Olá, sou o Dr. Carlos - especialista em psicologia de relacionamentos há mais de 15 anos. Já ajudei mais de 7.600 homens a reconquistarem suas ex com esse método. Me responda algumas perguntas rápidas para eu entender seu caso e poder lhe ensinar também!"
+* **Mensagem:** "Olá, sou o Dr. Carlos - especialista em psicologia de relacionamentos há mais de 15 anos. Já ajudei mais de 400 pessoas a reconquistarem quem amam com esse método. Me responda algumas perguntas rápidas para eu entender seu caso e poder lhe ensinar também!"
 * **Opção:** `Continuar`
 
 ### 3. Gênero (Adaptação Inteligente da Linguagem)
