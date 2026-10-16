@@ -1,9 +1,13 @@
 # Arquivos de log e testes
 *.log
 tools/
+auto-sync.js
+*.bat
+*.vbs
 startChat_response.json
 full_quiz_flow.json
 
 # Sistema e ambiente
 .DS_Store
 Thumbs.db
+
