@@ -541,10 +541,6 @@ function getQuizSteps(gender = 'homem') {
           content: 'Você poderá <strong>acessar seu plano diretamente no celular</strong>, computador ou tablet, de forma 100% discreta e sigilosa.'
         },
         {
-          type: 'image',
-          url: 'assets/images/depoimento_4.jpg'
-        },
-        {
           type: 'text',
           content: '✅ Milhares de casais já foram restaurados com esse método!'
         }
@@ -557,13 +553,13 @@ function getQuizSteps(gender = 'homem') {
       ]
     },
 
-    // PASSO 20: 4 Bônus Exclusivos + Preço Promocional em Meticais + Garantia 30 Dias + CTA
+    // PASSO 20: 3 Bônus Exclusivos + Preço Promocional em Meticais + Garantia 30 Dias + CTA
     {
       id: 20,
       messages: [
         {
           type: 'text',
-          content: 'E para garantir que nada dê errado no seu caso...\n\nVou liberar mais <strong>4 Super Bônus Exclusivos Gratuitos</strong> para você hoje:'
+          content: 'E para garantir que nada dê errado no seu caso...\n\nVou liberar mais <strong>3 Super Bônus Exclusivos Gratuitos</strong> para você hoje:'
         },
         {
           type: 'text',
@@ -579,11 +575,7 @@ function getQuizSteps(gender = 'homem') {
         },
         {
           type: 'text',
-          content: '🎁 <strong>#SUPER BÔNUS 4</strong> — Aplicativo Personalizado com Acesso Vitalício\n\nAcompanhe os desafios dia a dia diretamente pelo aplicativo exclusivo.\n\nDe <strike>600 Meticais</strike> por: <strong>GRÁTIS</strong>'
-        },
-        {
-          type: 'text',
-          content: `<strong>RESUMO DE TUDO O QUE VOCÊ LEVA:</strong>\n\n✅ Plano Reconquista Absoluta de 14 dias\n✅ Aplicativo completo com checklist e aulas\n✅ Ações diárias simples e comprovadas\n\n✅ Guia dos 7 Erros Fatais\n✅ Como Ler os Sinais de Interesse\n✅ ${bonus3Titulo}\n✅ Acesso Imediato no WhatsApp\n✅ Acesso Vitalício ao Método`
+          content: `<strong>RESUMO DE TUDO O QUE VOCÊ LEVA:</strong>\n\n✅ Plano Reconquista Absoluta de 14 dias\n✅ Ações diárias simples e comprovadas\n\n✅ Guia dos 7 Erros Fatais\n✅ Como Ler os Sinais de Interesse\n✅ ${bonus3Titulo}\n✅ Acesso Imediato no WhatsApp\n✅ Acesso Vitalício ao Método`
         },
         {
           type: 'text',
