@@ -4,6 +4,12 @@ Uma clonagem completa, autônoma, ultra-rápida e otimizada da página de vendas
 
 ---
 
+## 🚀 Status da Conexão
+- **Repositório Conectado:** [https://github.com/savide242-bot/quiz-ex](https://github.com/savide242-bot/quiz-ex)
+- **Sincronização em Tempo Real:** 🟢 Ativa (Qualquer alteração salva vai direto para o GitHub automaticamente)
+
+---
+
 ## 🚀 Como Executar
 1. Basta abrir o arquivo [`index.html`](file:///c:/Users/Lenovo/antigravity%20arquivo/Quiz%20Ex/index.html) em qualquer navegador web, ou subir a pasta inteira para qualquer hospedagem (Vercel, Netlify, Cloudflare Pages, Hostinger, cPanel, Apache, Nginx, etc.).
 2. Não requer servidor backend, banco de dados ou dependências de terceiros; tudo funciona de forma 100% autônoma e offline.
