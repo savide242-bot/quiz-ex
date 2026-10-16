@@ -405,6 +405,174 @@ body.chat-active {
   line-height: 1.6;
 }
 
+/* ========================================================= */
+/* TELA DE PROCESSAMENTO / A CONTACTAR O DOUTOR MANJATE      */
+/* ========================================================= */
+.processing-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 14, 20, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeInProc 0.3s ease;
+}
+
+@keyframes fadeInProc {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.processing-card {
+  width: 100%;
+  max-width: 420px;
+  background: #111b21;
+  border: 1px solid rgba(0, 168, 132, 0.45);
+  border-radius: 20px;
+  padding: 34px 22px 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 35px rgba(0, 168, 132, 0.25);
+  animation: scaleUpProc 0.3s ease;
+}
+
+@keyframes scaleUpProc {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.processing-avatar-wrapper {
+  position: relative;
+  width: 86px;
+  height: 86px;
+  margin-bottom: 20px;
+}
+
+.processing-avatar-img {
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #00a884;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.processing-pulse-ring {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  border: 2px solid #00a884;
+  border-radius: 50%;
+  animation: procPulse 2s infinite ease-out;
+  z-index: 1;
+}
+
+.processing-pulse-ring.delay {
+  animation-delay: 1s;
+}
+
+@keyframes procPulse {
+  0% { transform: scale(0.9); opacity: 0.9; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+.processing-online-indicator {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 17px;
+  height: 17px;
+  background-color: #25d366;
+  border: 3px solid #111b21;
+  border-radius: 50%;
+  z-index: 3;
+}
+
+.processing-spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid rgba(0, 168, 132, 0.2);
+  border-top-color: #00c853;
+  border-radius: 50%;
+  animation: procSpin 0.85s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes procSpin {
+  to { transform: rotate(360deg); }
+}
+
+.processing-title {
+  color: #ffffff;
+  font-size: 16.5px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 18px;
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.processing-steps-log {
+  width: 100%;
+  background: rgba(17, 27, 33, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+}
+
+.proc-step {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12.5px;
+  color: #64748b;
+  opacity: 0.45;
+  transition: all 0.3s ease;
+}
+
+.proc-step.active {
+  color: #f1f5f9;
+  opacity: 1;
+  font-weight: 600;
+}
+
+.proc-step.completed {
+  color: #34d399;
+  opacity: 1;
+}
+
+.processing-privacy-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  color: #8696a0;
+}
+
+.processing-privacy-badge svg {
+  color: #00a884;
+}
+
 /* Responsividade Mobile */
 @media (max-width: 480px) {
   .vsl-container {
