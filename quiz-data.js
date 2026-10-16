@@ -42,11 +42,11 @@ function getQuizSteps(gender = 'homem') {
       messages: [
         {
           type: 'text',
-          content: 'Olá! Sou o **Dr. Carlos M. Nhantumbo** — psicólogo especialista em comportamento humano e relacionamentos há mais de 15 anos.'
+          content: 'Olá! Sou o <strong>Dr. Carlos M. Nhantumbo</strong> — psicólogo especialista em comportamento humano e relacionamentos há mais de 15 anos.'
         },
         {
           type: 'text',
-          content: 'Ao longo dos anos, já atendi e ajudei **mais de 7.600 pessoas a resgatarem seus relacionamentos**, mesmo quando parecia tudo perdido.\n\nPreciso te fazer algumas **perguntas rápidas e confidenciais** para analisar o seu caso com carinho e te dizer exatamente o que fazer.'
+          content: 'Ao longo dos anos, já atendi e ajudei <strong>mais de 400 pessoas a resgatarem seus relacionamentos</strong>, mesmo quando parecia tudo perdido.\n\nPreciso te fazer algumas <strong>perguntas rápidas e confidenciais</strong> para analisar o seu caso com carinho e te dizer exatamente o que fazer.'
         }
       ],
       options: [
@@ -408,7 +408,7 @@ function getQuizSteps(gender = 'homem') {
       messages: [
         {
           type: 'text',
-          content: `⚠️ **Análise concluída, ${queridoQuerida}.**\n\nAnalisei com atenção cada detalhe das suas respostas e o padrão do seu caso ficou muito claro na minha mesa.`
+          content: `⚠️ <strong>Análise concluída, ${queridoQuerida}.</strong>\n\nAnalisei com atenção cada detalhe das suas respostas e o padrão do seu caso ficou muito claro na minha mesa.`
         },
         {
           type: 'text',
@@ -418,11 +418,11 @@ function getQuizSteps(gender = 'homem') {
         },
         {
           type: 'text',
-          content: `A excelente notícia?\n\nEsse bloqueio **ainda pode ser totalmente quebrado no seu caso**. Você tem chances reais e concretas de reconquistar ${eleEla}!\n\nAtivando os **Gatilhos da Atração Inconsciente**, que reacendem as emoções positivas e o desejo que ${eleEla} sentia por você no início do relacionamento.`
+          content: `A excelente notícia?\n\nEsse bloqueio <strong>ainda pode ser totalmente quebrado no seu caso</strong>. Você tem chances reais e concretas de reconquistar ${eleEla}!\n\nAtivando os <strong>Gatilhos da Atração Inconsciente</strong>, que reacendem as emoções positivas e o desejo que ${eleEla} sentia por você no início do relacionamento.`
         },
         {
           type: 'text',
-          content: `Por isso, preparei a solução personalizada ideal para você:\n\n🔥 **Plano Reconquista Absoluta**\n\nUm método prático e diário de 14 dias, onde te pego pela mão e te ensino a ativar os gatilhos da atração ${neleNela}.\n\nVocê vai saber exatamente o que falar, como agir e como fazer ${eleEla} querer voltar por vontade própria!`
+          content: `Por isso, preparei a solução personalizada ideal para você:\n\n🔥 <strong>Plano Reconquista Absoluta</strong>\n\nUm método prático e diário de 14 dias, onde te pego pela mão e te ensino a ativar os gatilhos da atração ${neleNela}.\n\nVocê vai saber exatamente o que falar, como agir e como fazer ${eleEla} querer voltar por vontade própria!`
         },
         {
           type: 'text',
@@ -460,7 +460,7 @@ function getQuizSteps(gender = 'homem') {
       messages: [
         {
           type: 'text',
-          content: `**94% dos alunos** que estavam exatamente na mesma situação que você...\n\nseguiram o Plano Reconquista Absoluta e **reconquistaram ${ex} em menos de 14 dias!**`
+          content: `<strong>94% dos alunos</strong> que estavam exatamente na mesma situação que você...\n\nseguiram o Plano Reconquista Absoluta e <strong>reconquistaram ${ex} em menos de 14 dias!</strong>`
         },
         {
           type: 'image',
@@ -497,23 +497,23 @@ function getQuizSteps(gender = 'homem') {
         },
         {
           type: 'text',
-          content: 'O seu **plano personalizado de 14 dias está pronto**! De acordo com as respostas do seu diagnóstico, este será o cronograma dos seus resultados:'
+          content: 'O seu <strong>plano personalizado de 14 dias está pronto</strong>! De acordo com as respostas do seu diagnóstico, este será o cronograma dos seus resultados:'
         },
         {
           type: 'text',
-          content: `🔴 **Hoje:**\n${isWoman ? 'Ele parece frio e distante' : 'Ela não vê futuro juntos'}`
+          content: `🔴 <strong>Hoje:</strong>\n${isWoman ? 'Ele parece frio e distante' : 'Ela não vê futuro juntos'}`
         },
         {
           type: 'text',
-          content: `🟠 **Em 4 dias:**\nComeça a lembrar dos momentos bons e pensar em você`
+          content: `🟠 <strong>Em 4 dias:</strong>\nComeça a lembrar dos momentos bons e pensar em você`
         },
         {
           type: 'text',
-          content: `🟡 **Em 9 dias:**\nSente saudade, falta do seu cheiro e atração por você novamente`
+          content: `🟡 <strong>Em 9 dias:</strong>\nSente saudade, falta do seu cheiro e atração por você novamente`
         },
         {
           type: 'text',
-          content: `🟢 **Em 14 dias:**\n${isWoman ? 'Ele se arrepende do término, percebe que você é a mulher certa, e quer voltar naturalmente' : 'Ela se arrepende do término, percebe que você é o homem certo, e quer voltar naturalmente'}`
+          content: `🟢 <strong>Em 14 dias:</strong>\n${isWoman ? 'Ele se arrepende do término, percebe que você é a mulher certa, e quer voltar naturalmente' : 'Ela se arrepende do término, percebe que você é o homem certo, e quer voltar naturalmente'}`
         },
         {
           type: 'text',
@@ -534,7 +534,7 @@ function getQuizSteps(gender = 'homem') {
       messages: [
         {
           type: 'text',
-          content: `📋 **O QUE VOCÊ RECEBE HOJE:**\n\n✅ Plano Reconquista Absoluta de 14 dias\n\n✅ Método passo a passo para ativar os gatilhos da atração\n\n✅ Roteiros de mensagens testadas e validadas para enviar\n\n✅ Como recuperar o interesse ${deleDela} sem se humilhar\n\n✅ Como agir caso ${eleEla} responda com frieza\n\n✅ Como blindar o relacionamento para nunca mais terminarem\n\n✅ Acesso imediato no celular pelo WhatsApp\n\n✅ Suporte e tira-dúvidas exclusivo\n\n✅ Acesso vitalício para sempre`
+          content: `📋 <strong>O QUE VOCÊ RECEBE HOJE:</strong>\n\n✅ Plano Reconquista Absoluta de 14 dias\n\n✅ Método passo a passo para ativar os gatilhos da atração\n\n✅ Roteiros de mensagens testadas e validadas para enviar\n\n✅ Como recuperar o interesse ${deleDela} sem se humilhar\n\n✅ Como agir caso ${eleEla} responda com frieza\n\n✅ Como blindar o relacionamento para nunca mais terminarem\n\n✅ Acesso imediato no celular pelo WhatsApp\n\n✅ Suporte e tira-dúvidas exclusivo\n\n✅ Acesso vitalício para sempre`
         },
         {
           type: 'image',
@@ -542,7 +542,7 @@ function getQuizSteps(gender = 'homem') {
         },
         {
           type: 'text',
-          content: 'Você poderá **acessar seu plano diretamente no celular**, computador ou tablet, de forma 100% discreta e sigilosa.'
+          content: 'Você poderá <strong>acessar seu plano diretamente no celular</strong>, computador ou tablet, de forma 100% discreta e sigilosa.'
         },
         {
           type: 'image',
@@ -567,39 +567,39 @@ function getQuizSteps(gender = 'homem') {
       messages: [
         {
           type: 'text',
-          content: 'E para garantir que nada dê errado no seu caso...\n\nVou liberar mais **4 Super Bônus Exclusivos Gratuitos** para você hoje:'
+          content: 'E para garantir que nada dê errado no seu caso...\n\nVou liberar mais <strong>4 Super Bônus Exclusivos Gratuitos</strong> para você hoje:'
         },
         {
           type: 'text',
-          content: `🎁 **#BÔNUS 1** — Guia dos 7 Erros Que Fazem ${isWoman ? 'Ele' : 'Ela'} Se Afastar Ainda Mais\n\nDescubra os principais comportamentos que sabotam a reconquista e como evitá-los.\n\nDe <strike>250 Meticais</strike> por: **GRÁTIS**`
+          content: `🎁 <strong>#BÔNUS 1</strong> — Guia dos 7 Erros Que Fazem ${isWoman ? 'Ele' : 'Ela'} Se Afastar Ainda Mais\n\nDescubra os principais comportamentos que sabotam a reconquista e como evitá-los.\n\nDe <strike>250 Meticais</strike> por: <strong>GRÁTIS</strong>`
         },
         {
           type: 'text',
-          content: `🎁 **#BÔNUS 2** — Como Ler os Sinais de Interesse ${isWoman ? 'Dele' : 'Dela'}\n\nIdentifique quando seu ex está pronto para voltar e o momento exato de marcar um reencontro.\n\nDe <strike>350 Meticais</strike> por: **GRÁTIS**`
+          content: `🎁 <strong>#BÔNUS 2</strong> — Como Ler os Sinais de Interesse ${isWoman ? 'Dele' : 'Dela'}\n\nIdentifique quando seu ex está pronto para voltar e o momento exato de marcar um reencontro.\n\nDe <strike>350 Meticais</strike> por: <strong>GRÁTIS</strong>`
         },
         {
           type: 'text',
-          content: `🎁 **#BÔNUS 3** — ${bonus3Titulo}\n\nAumente o seu magnetismo pessoal e confiança para ${eleEla} ficar louco(a) de desejo por você.\n\nDe <strike>300 Meticais</strike> por: **GRÁTIS**`
+          content: `🎁 <strong>#BÔNUS 3</strong> — ${bonus3Titulo}\n\nAumente o seu magnetismo pessoal e confiança para ${eleEla} ficar louco(a) de desejo por você.\n\nDe <strike>300 Meticais</strike> por: <strong>GRÁTIS</strong>`
         },
         {
           type: 'text',
-          content: '🎁 **#SUPER BÔNUS 4** — Aplicativo Personalizado com Acesso Vitalício\n\nAcompanhe os desafios dia a dia diretamente pelo aplicativo exclusivo.\n\nDe <strike>600 Meticais</strike> por: **GRÁTIS**'
+          content: '🎁 <strong>#SUPER BÔNUS 4</strong> — Aplicativo Personalizado com Acesso Vitalício\n\nAcompanhe os desafios dia a dia diretamente pelo aplicativo exclusivo.\n\nDe <strike>600 Meticais</strike> por: <strong>GRÁTIS</strong>'
         },
         {
           type: 'text',
-          content: `**RESUMO DE TUDO O QUE VOCÊ LEVA:**\n\n✅ Plano Reconquista Absoluta de 14 dias\n✅ Aplicativo completo com checklist e aulas\n✅ Ações diárias simples e comprovadas\n\n✅ Guia dos 7 Erros Fatais\n✅ Como Ler os Sinais de Interesse\n✅ ${bonus3Titulo}\n✅ Acesso Imediato no WhatsApp\n✅ Acesso Vitalício ao Método`
+          content: `<strong>RESUMO DE TUDO O QUE VOCÊ LEVA:</strong>\n\n✅ Plano Reconquista Absoluta de 14 dias\n✅ Aplicativo completo com checklist e aulas\n✅ Ações diárias simples e comprovadas\n\n✅ Guia dos 7 Erros Fatais\n✅ Como Ler os Sinais de Interesse\n✅ ${bonus3Titulo}\n✅ Acesso Imediato no WhatsApp\n✅ Acesso Vitalício ao Método`
         },
         {
           type: 'text',
-          content: 'Valor normal de tudo somado: <strike>1.500 Meticais</strike>\n\nHOJE por **apenas**: <span style="font-size:1.3em;color:#00a884;font-weight:bold;">197 Meticais</span>'
+          content: 'Valor normal de tudo somado: <strike>1.500 Meticais</strike>\n\nHOJE por <strong>apenas</strong>: <span style="font-size:1.3em;color:#00a884;font-weight:bold;">197 Meticais</span>'
         },
         {
           type: 'text',
-          content: 'Sim, menos do que o valor de um lanche na rua.\n\nComo meu compromisso profissional é salvar relacionamentos...\n\n🔥 Hoje eu liberei apenas **5 vagas promocionais** por esse valor simbólico! ⏰'
+          content: 'Sim, menos do que o valor de um lanche na rua.\n\nComo meu compromisso profissional é salvar relacionamentos...\n\n🔥 Hoje eu liberei apenas <strong>5 vagas promocionais</strong> por esse valor simbólico! ⏰'
         },
         {
           type: 'text',
-          content: '✅ E você conta com **30 dias de Garantia Incondicional Blindada**.\n\nSe por qualquer razão você achar que o método não é para você, basta me enviar uma mensagem que **devolvo 100% do seu dinheiro.**\n\nSem perguntas e sem burocracia. O risco é todo meu. **Seu risco é ZERO.**'
+          content: '✅ E você conta com <strong>30 dias de Garantia Incondicional Blindada</strong>.\n\nSe por qualquer razão você achar que o método não é para você, basta me enviar uma mensagem que <strong>devolvo 100% do seu dinheiro.</strong>\n\nSem perguntas e sem burocracia. O risco é todo meu. <strong>Seu risco é ZERO.</strong>'
         },
         {
           type: 'text',
