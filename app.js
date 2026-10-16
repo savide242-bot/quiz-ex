@@ -249,6 +249,17 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
+    // Disparar evento InitiateCheckout para o Meta Pixel
+    try {
+      if (typeof fbq === 'function') {
+        fbq('track', 'InitiateCheckout', {
+          content_name: 'Plano Reconquista Absoluta',
+          value: 197,
+          currency: 'MZN'
+        });
+      }
+    } catch (e) {}
+
     // Preservar UTMs e parâmetros se habilitado
     if (APP_CONFIG.forwardUtmParams && window.location.search) {
       const sep = targetUrl.includes('?') ? '&' : '?';
