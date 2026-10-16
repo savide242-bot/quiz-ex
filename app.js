@@ -532,24 +532,82 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Seções da Página Única (VSL e Chat integrados)
+  const vslSection = document.getElementById('vsl-section');
+  const chatSection = document.getElementById('chat-section');
+  const btnContinueChat = document.getElementById('btn-continue-chat');
+  let quizStarted = false;
+
+  function startQuizInSamePage() {
+    if (quizStarted) return;
+    quizStarted = true;
+
+    // 1. Oculta VSL e exibe o Chat WhatsApp na mesma página
+    if (vslSection) {
+      vslSection.style.display = 'none';
+      const ytFrame = document.getElementById('yt-video-frame');
+      if (ytFrame) {
+        // Pausa/reseta vídeo para não continuar tocando áudio em segundo plano
+        ytFrame.src = ytFrame.src;
+      }
+    }
+
+    document.body.classList.remove('vsl-mode');
+    document.body.classList.add('chat-active');
+
+    if (chatSection) {
+      chatSection.style.display = 'block';
+    }
+
+    // Rola para o topo do WhatsApp
+    window.scrollTo({ top: 0, behavior: 'instant' });
+
+    // Desbloqueia áudio de notificação com a interação do clique
+    if (notificationAudio) {
+      notificationAudio.play().then(() => {
+        notificationAudio.pause();
+        notificationAudio.currentTime = 0;
+        isAudioUnlocked = true;
+      }).catch(() => {});
+    }
+
+    // 2. Inicia o primeiro passo do Quiz
+    const initialSteps = getCurrentSteps();
+    if (initialSteps.length > 0) {
+      loadStep(initialSteps[0]);
+    }
+  }
+
+  // Clique no botão CONTINUAR da VSL
+  if (btnContinueChat) {
+    btnContinueChat.addEventListener('click', (e) => {
+      e.preventDefault();
+      startQuizInSamePage();
+    });
+  } else {
+    // Se a página não tiver seção VSL (abertura direta)
+    const initialSteps = getCurrentSteps();
+    if (initialSteps.length > 0) {
+      loadStep(initialSteps[0]);
+    }
+  }
+
   // Botão Voltar da barra superior
   const waBackBtn = document.getElementById('wa-back-btn');
   if (waBackBtn) {
     waBackBtn.addEventListener('click', (e) => {
       e.stopPropagation();
-      if (confirm('Deseja realmente sair da conversa com o Dr. Carlos?')) {
-        if (APP_CONFIG.backRedirectUrl) {
-          window.location.href = APP_CONFIG.backRedirectUrl;
+      if (confirm('Deseja realmente voltar para a página inicial?')) {
+        if (vslSection && chatSection) {
+          chatSection.style.display = 'none';
+          vslSection.style.display = 'block';
+          document.body.classList.remove('chat-active');
+          document.body.classList.add('vsl-mode');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
         } else {
           window.location.reload();
         }
       }
     });
-  }
-
-  // Inicializar o primeiro passo
-  const initialSteps = getCurrentSteps();
-  if (initialSteps.length > 0) {
-    loadStep(initialSteps[0]);
   }
 });
