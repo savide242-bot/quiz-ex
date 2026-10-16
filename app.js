@@ -156,6 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.className = 'option-btn';
       if (opt.isCheckout) {
         btn.classList.add('checkout-cta');
+        btn.id = 'btn-initiate-checkout';
       }
       btn.innerHTML = opt.text;
 
