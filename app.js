@@ -293,6 +293,259 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // =========================================================
+  // SISTEMA DE CHAMADA WHATSAPP REALISTA & ÁUDIO DE TOQUE
+  // =========================================================
+  const callScreen = document.getElementById('wa-call-screen');
+  const callStatusText = document.getElementById('call-status-text');
+  const callBtnEnd = document.getElementById('call-btn-end');
+  const callBtnMute = document.getElementById('call-btn-mute');
+  const callBtnSpeaker = document.getElementById('call-btn-speaker');
+  const btnVoiceCall = document.getElementById('btn-voice-call');
+  const btnVideoCall = document.getElementById('btn-video-call');
+  const vietnamNoticeModal = document.getElementById('vietnam-notice-modal');
+  const btnCloseVietnamNotice = document.getElementById('btn-close-vietnam-notice');
+
+  // Gerador de Som de Chamada WhatsApp (Web Audio API)
+  let audioCtx = null;
+  let ringInterval = null;
+  let callTimeout = null;
+  let isMuted = false;
+  let isSpeaker = false;
+
+  function playRingtoneBeep() {
+    try {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(425, audioCtx.currentTime); // Frequência padrão de chamada telefônica
+
+      gain.gain.setValueAtTime(0, audioCtx.currentTime);
+      gain.gain.linearRampToValueAtTime(0.12, audioCtx.currentTime + 0.05);
+      gain.gain.setValueAtTime(0.12, audioCtx.currentTime + 1.2);
+      gain.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 1.3);
+
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+
+      osc.start();
+      osc.stop(audioCtx.currentTime + 1.3);
+    } catch (e) {}
+  }
+
+  function startCall(isVideo = false) {
+    if (callScreen) {
+      callScreen.classList.add('active');
+      callStatusText.textContent = isVideo ? 'Chamada de vídeo... Chamando' : 'Chamando...';
+    }
+
+    // Tocar primeiro ring e iniciar repetição realista
+    playRingtoneBeep();
+    ringInterval = setInterval(playRingtoneBeep, 3500);
+
+    // Após 12 segundos chamando sem atender, encerra e exibe a mensagem de ausência
+    clearTimeout(callTimeout);
+    callTimeout = setTimeout(() => {
+      endCallAndShowNotice();
+    }, 12000);
+  }
+
+  function endCallAndShowNotice() {
+    if (ringInterval) {
+      clearInterval(ringInterval);
+      ringInterval = null;
+    }
+    clearTimeout(callTimeout);
+
+    if (callScreen) {
+      callScreen.classList.remove('active');
+    }
+
+    // Exibir o aviso oficial da viagem ao Vietnã com o e-mail
+    if (vietnamNoticeModal) {
+      vietnamNoticeModal.classList.add('active');
+    }
+  }
+
+  if (btnVoiceCall) {
+    btnVoiceCall.addEventListener('click', (e) => {
+      e.stopPropagation();
+      startCall(false);
+    });
+  }
+
+  if (btnVideoCall) {
+    btnVideoCall.addEventListener('click', (e) => {
+      e.stopPropagation();
+      startCall(true);
+    });
+  }
+
+  if (callBtnEnd) {
+    callBtnEnd.addEventListener('click', () => {
+      endCallAndShowNotice();
+    });
+  }
+
+  if (callBtnMute) {
+    callBtnMute.addEventListener('click', () => {
+      isMuted = !isMuted;
+      callBtnMute.style.backgroundColor = isMuted ? 'rgba(255,255,255,0.45)' : 'rgba(255,255,255,0.14)';
+    });
+  }
+
+  if (callBtnSpeaker) {
+    callBtnSpeaker.addEventListener('click', () => {
+      isSpeaker = !isSpeaker;
+      callBtnSpeaker.style.backgroundColor = isSpeaker ? 'rgba(255,255,255,0.45)' : 'rgba(255,255,255,0.14)';
+    });
+  }
+
+  if (btnCloseVietnamNotice) {
+    btnCloseVietnamNotice.addEventListener('click', () => {
+      vietnamNoticeModal.classList.remove('active');
+    });
+  }
+
+  if (vietnamNoticeModal) {
+    vietnamNoticeModal.addEventListener('click', (e) => {
+      if (e.target === vietnamNoticeModal) {
+        vietnamNoticeModal.classList.remove('active');
+      }
+    });
+  }
+
+  // =========================================================
+  // GAVETA DE PERFIL DO DR. CARLOS
+  // =========================================================
+  const profileDrawer = document.getElementById('profile-drawer');
+  const profileTrigger = document.getElementById('wa-header-profile-trigger');
+  const profileBackBtn = document.getElementById('profile-back-btn');
+  const profileBtnChat = document.getElementById('profile-btn-chat');
+  const profileBtnAudio = document.getElementById('profile-btn-audio');
+  const profileBtnVideo = document.getElementById('profile-btn-video');
+
+  function openProfile() {
+    if (profileDrawer) profileDrawer.classList.add('active');
+  }
+
+  function closeProfile() {
+    if (profileDrawer) profileDrawer.classList.remove('active');
+  }
+
+  if (profileTrigger) {
+    profileTrigger.addEventListener('click', (e) => {
+      // Não aciona se o clique for na seta de voltar
+      if (e.target.closest('#wa-back-btn')) return;
+      openProfile();
+    });
+  }
+
+  if (profileBackBtn) {
+    profileBackBtn.addEventListener('click', closeProfile);
+  }
+
+  if (profileBtnChat) {
+    profileBtnChat.addEventListener('click', closeProfile);
+  }
+
+  if (profileBtnAudio) {
+    profileBtnAudio.addEventListener('click', () => {
+      closeProfile();
+      startCall(false);
+    });
+  }
+
+  if (profileBtnVideo) {
+    profileBtnVideo.addEventListener('click', () => {
+      closeProfile();
+      startCall(true);
+    });
+  }
+
+  // =========================================================
+  // MENU DROPDOWN DOS 3 PONTINHOS
+  // =========================================================
+  const btnMenuDots = document.getElementById('btn-menu-dots');
+  const dropdownMenu = document.getElementById('wa-dropdown-menu');
+  const menuViewContact = document.getElementById('menu-view-contact');
+  const menuVoiceCall = document.getElementById('menu-voice-call');
+  const menuVideoCall = document.getElementById('menu-video-call');
+  const menuSendEmail = document.getElementById('menu-send-email');
+  const menuMute = document.getElementById('menu-mute');
+
+  if (btnMenuDots && dropdownMenu) {
+    btnMenuDots.addEventListener('click', (e) => {
+      e.stopPropagation();
+      dropdownMenu.classList.toggle('active');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!dropdownMenu.contains(e.target) && e.target !== btnMenuDots) {
+        dropdownMenu.classList.remove('active');
+      }
+    });
+  }
+
+  if (menuViewContact) {
+    menuViewContact.addEventListener('click', () => {
+      dropdownMenu.classList.remove('active');
+      openProfile();
+    });
+  }
+
+  if (menuVoiceCall) {
+    menuVoiceCall.addEventListener('click', () => {
+      dropdownMenu.classList.remove('active');
+      startCall(false);
+    });
+  }
+
+  if (menuVideoCall) {
+    menuVideoCall.addEventListener('click', () => {
+      dropdownMenu.classList.remove('active');
+      startCall(true);
+    });
+  }
+
+  if (menuSendEmail) {
+    menuSendEmail.addEventListener('click', () => {
+      dropdownMenu.classList.remove('active');
+      window.location.href = 'mailto:lovmoia126@gmail.com?subject=Contacto%20Dr.%20Carlos';
+    });
+  }
+
+  if (menuMute) {
+    menuMute.addEventListener('click', () => {
+      dropdownMenu.classList.remove('active');
+      APP_CONFIG.enableAudio = !APP_CONFIG.enableAudio;
+      alert(APP_CONFIG.enableAudio ? 'Notificações de som ativadas.' : 'Notificações de som silenciadas.');
+    });
+  }
+
+  // Botão Voltar da barra superior
+  const waBackBtn = document.getElementById('wa-back-btn');
+  if (waBackBtn) {
+    waBackBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (confirm('Deseja realmente sair da conversa com o Dr. Carlos?')) {
+        if (APP_CONFIG.backRedirectUrl) {
+          window.location.href = APP_CONFIG.backRedirectUrl;
+        } else {
+          window.location.reload();
+        }
+      }
+    });
+  }
+
   // Inicializar o primeiro passo
   const initialSteps = getCurrentSteps();
   if (initialSteps.length > 0) {
