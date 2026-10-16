@@ -136,8 +136,19 @@
     <p style="margin-top:6px;font-size:11px;">Este site não possui vínculo institucional com o WhatsApp ou com o YouTube. Os resultados podem variar de acordo com a aplicação individual do método.</p>
   </footer>
 
-  <!-- Script para Preservação Automática de Parâmetros e UTMs -->
+  <!-- Script para Preservação Automática de Parâmetros e Reprodução -->
   <script>
+    function playVslVideo() {
+      const poster = document.getElementById('video-poster');
+      const frame = document.getElementById('yt-video-frame');
+      if (poster) {
+        poster.classList.add('hidden');
+      }
+      if (frame) {
+        frame.src = "https://www.youtube.com/embed/xOhehsYJLOk?autoplay=1&enablejsapi=1&playsinline=1&rel=0";
+      }
+    }
+
     document.addEventListener('DOMContentLoaded', function() {
       const btn = document.getElementById('btn-continue-chat');
       if (btn && window.location.search) {
