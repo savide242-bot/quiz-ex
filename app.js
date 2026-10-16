@@ -86,6 +86,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (indicator) indicator.remove();
   }
 
+  // Formatar texto e garantir que negrito (tags ou asteriscos) seja renderizado com perfeição no celular
+  function formatMessageText(text) {
+    if (!text) return '';
+    return text
+      .replace(/\*\*\*([^*]+)\*\*\*/g, '<strong><em>$1</em></strong>')
+      .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+      .replace(/(^|[^\*])\*([^\*]+)\*([^\*]|$)/g, '$1<strong>$2</strong>$3');
+  }
+
   // Adicionar mensagem do Dr. Carlos ao chat
   function appendHostMessage(msg) {
     const row = document.createElement('div');
@@ -93,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let contentHtml = '';
     if (msg.type === 'text') {
-      contentHtml = `<div class="bubble-content">${msg.content}</div>`;
+      contentHtml = `<div class="bubble-content">${formatMessageText(msg.content)}</div>`;
     } else if (msg.type === 'image') {
       contentHtml = `
         <div class="bubble-image-wrapper" onclick="window.openLightbox('${msg.url}')">
