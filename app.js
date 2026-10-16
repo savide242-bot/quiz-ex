@@ -543,24 +543,62 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Seções da Página Única (VSL e Chat integrados)
+  // Seções da Página Única (VSL, Processamento e Chat integrados)
   const vslSection = document.getElementById('vsl-section');
   const chatSection = document.getElementById('chat-section');
+  const processingScreen = document.getElementById('processing-screen');
   const btnContinueChat = document.getElementById('btn-continue-chat');
+  const procTitle = document.getElementById('processing-title');
+  const step1 = document.getElementById('proc-step-1');
+  const step2 = document.getElementById('proc-step-2');
+  const step3 = document.getElementById('proc-step-3');
+  const step4 = document.getElementById('proc-step-4');
   let quizStarted = false;
 
-  function startQuizInSamePage() {
+  async function startQuizInSamePage() {
     if (quizStarted) return;
     quizStarted = true;
 
-    // 1. Oculta VSL e exibe o Chat WhatsApp na mesma página
+    // Desbloqueia áudio de notificação com a interação do clique
+    if (notificationAudio) {
+      notificationAudio.play().then(() => {
+        notificationAudio.pause();
+        notificationAudio.currentTime = 0;
+        isAudioUnlocked = true;
+      }).catch(() => {});
+    }
+
+    // 1. Exibe a tela de processamento / conexão
+    if (processingScreen) {
+      processingScreen.style.display = 'flex';
+
+      // Etapa 1: A contactar o Doutor Manjate... (1.3s)
+      await new Promise(r => setTimeout(r, 1300));
+      if (step1) { step1.classList.remove('active'); step1.classList.add('completed'); }
+      if (step2) { step2.classList.add('active'); }
+      if (procTitle) procTitle.innerText = 'A inicializar criptografia segura de ponta a ponta...';
+
+      // Etapa 2: Criptografia (1.2s)
+      await new Promise(r => setTimeout(r, 1200));
+      if (step2) { step2.classList.remove('active'); step2.classList.add('completed'); }
+      if (step3) { step3.classList.add('active'); }
+      if (procTitle) procTitle.innerText = 'A preparar questionário confidencial de diagnóstico...';
+
+      // Etapa 3: Preparando questionário (1.1s)
+      await new Promise(r => setTimeout(r, 1100));
+      if (step3) { step3.classList.remove('active'); step3.classList.add('completed'); }
+      if (step4) { step4.classList.add('active'); step4.classList.add('completed'); }
+      if (procTitle) procTitle.innerText = '✅ Doutor conectado! A abrir atendimento exclusivo...';
+
+      // Confirmação rápida (0.7s)
+      await new Promise(r => setTimeout(r, 700));
+
+      processingScreen.style.display = 'none';
+    }
+
+    // 2. Oculta VSL e exibe o Chat WhatsApp na mesma página
     if (vslSection) {
       vslSection.style.display = 'none';
-      const ytFrame = document.getElementById('yt-video-frame');
-      if (ytFrame) {
-        // Pausa/reseta vídeo para não continuar tocando áudio em segundo plano
-        ytFrame.src = ytFrame.src;
-      }
     }
 
     document.body.classList.remove('vsl-mode');
@@ -573,16 +611,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Rola para o topo do WhatsApp
     window.scrollTo({ top: 0, behavior: 'instant' });
 
-    // Desbloqueia áudio de notificação com a interação do clique
-    if (notificationAudio) {
-      notificationAudio.play().then(() => {
-        notificationAudio.pause();
-        notificationAudio.currentTime = 0;
-        isAudioUnlocked = true;
-      }).catch(() => {});
-    }
-
-    // 2. Inicia o primeiro passo do Quiz
+    // 3. Inicia o primeiro passo do Quiz
     const initialSteps = getCurrentSteps();
     if (initialSteps.length > 0) {
       loadStep(initialSteps[0]);
