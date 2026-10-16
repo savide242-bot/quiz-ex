@@ -120,18 +120,17 @@ Abaixo está o fluxo extraído diretamente da árvore de conversa:
 ### 12. Conclusão do Diagnóstico & Apresentação da Oferta
 * Análise concluída destacando o "bloqueio emocional defensivo" e a solução: **Plano Reconquista Absoluta de 14 dias**.
 * Apresentação dos 7 benefícios principais com checks.
-* Prova social: 94% de sucesso + galeria com 3 prints reais de conversas do WhatsApp de alunos recuperando suas parceiras.
+* Prova social: 94% de sucesso + 2 depoimentos reais de casais restabelecidos com o Dr. Carlos.
 * Linha do tempo visual personalizada:
-  * 🔴 **Hoje:** Ela não vê futuro juntos
+  * 🔴 **Hoje:** Ela/Ele não vê futuro juntos
   * 🟠 **Em 4 dias:** Começa a pensar em você
   * 🟡 **Em 9 dias:** Sente sua falta e atração por você novamente
-  * 🟢 **Em 14 dias:** Ela se arrepende do término, percebe que você é o homem certo, e quer voltar naturalmente
+  * 🟢 **Em 14 dias:** Arrependimento do término e volta natural
 * Mockup 3D dos entregáveis + acesso imediato por WhatsApp.
-* **4 Super Bônus Gratuitos:**
-  1. Guia dos 7 Erros Que Fazem Ela Se Afastar Ainda Mais (De 250 Meticais por GRÁTIS)
-  2. Como Ler os Sinais de Interesse Dela (De 350 Meticais por GRÁTIS)
-  3. Manual do Homem Magnético (De 300 Meticais por GRÁTIS)
-  4. Aplicativo Personalizado Vitalício (De 600 Meticais por GRÁTIS)
+* **3 Super Bônus Gratuitos:**
+  1. Guia dos 7 Erros Que Fazem o Ex Se Afastar Ainda Mais (De 250 Meticais por GRÁTIS)
+  2. Como Ler os Sinais de Interesse do Ex (De 350 Meticais por GRÁTIS)
+  3. Manual do Homem / Mulher Magnético(a) (De 300 Meticais por GRÁTIS)
 * Ancoragem de preço: De **1.500 Meticais** por apenas **197 Meticais**.
 * Escassez: "Apenas 5 vagas promocionais liberadas hoje".
 * Garantia incondicional blindada de 30 dias (100% de reembolso).
