@@ -464,10 +464,6 @@ function getQuizSteps(gender = 'homem') {
         },
         {
           type: 'image',
-          url: 'assets/images/depoimento_1.jpg'
-        },
-        {
-          type: 'image',
           url: 'assets/images/depoimento_2.jpg'
         },
         {
