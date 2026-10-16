@@ -16,7 +16,8 @@ function getQuizSteps(gender = 'homem') {
   const prontoPronta = isWoman ? 'pronta' : 'pronto';
   const queridoQuerida = isWoman ? 'minha querida' : 'meu amigo';
   const bonus3Titulo = isWoman ? 'Manual da Mulher Magnética' : 'Manual do Homem Magnético';
-  const ctaFinal = isWoman ? 'SIM, QUERO ELE DE VOLTA!' : 'SIM, QUERO ELA DE VOLTA!';
+  // CTA unificado para rastreamento de InitiateCheckout (Pixel / Tag Manager)
+  const ctaFinal = '👉 SIM, QUERO ELE(A) DE VOLTA!';
 
   return [
     // PASSO 1: Boas-vindas e Gancho Inicial
